@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Montseratt", "Avenir";
+}
+
+#avengers {
+    position: absolute;
+    height: 120px;
+    width: 340px;
+    top: 3%;
+    left: 2%;
+    z-index: 9;
+}
+
+#connect {
+    position: absolute;
+    height: 120px;
+    width: 340px;
+    top: 3%;
+    right: 2%;
+    z-index: 9;
+}
+
+.logos {
+    position: absolute;
+    top: 100%;
+    left: 35%;
+
+}
+
+.logos.active {
+    transition: 10s;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    height: 80px;
+    width: 80px;
+    z-index: 9;
+}
+
+.logos.active.gone {
+    transition: 10s;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    z-index: 9;
+}
+
+.logosP {
+    transition: 10s;
+    top: 5%;
+    position: absolute;
+    left: 46.5%;
+    height: 80px;
+    width: 80px;
+    z-index: 5;
+    display: none;
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+    z-index: 9999999999;
+}
+
+body {
+    background: black;
+}
+
+.reveal {
+    position: absolute;
+    top: 15px;
+    left: 2px;
+    border: 1px solid rgb(128, 0, 0);
+    border-radius: 100%;
+}
+
+.board.active {
+    transition: 5s;
+    position: absolute;
+    height: 480px;
+    width: 560px;
+    left: 30%;
+    top: 37%;
+    z-index: 9999999;
+    background-color: rgb(230, 138, 0);
+    background-image: url('images/web.png');
+    background-position: center;
+    transform:rotate(1440deg);
+}
+
+.board.active.gone {
+    transform: rotate(18000deg) ;
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    left: 49.5%;
+    top: 26.5%;
+    z-index: 9999999;
+    background-color: transparent;
+    transition: 10s;
+    transform:rotate(18000deg );
+}
+
+#winner {
+    display: none;
+    background: grey;
+    margin: 20px auto;
+    position: relative;
+    height: 130px;
+    width: 280px;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: 4px solid white;
+    z-index: 99;
+}
+
+#again {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    background-color: rgb(230, 138, 0);
+    display: block;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+}
+
+#yes {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    font-size: 0.8em;
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 0;
+    padding: 0 0;
+}
+
+#yes:hover, #no:hover {
+    background-color: green;
+    cursor:pointer;
+}
+
+#no {
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    width: 100%;
+    font-size: 0.8em;
+    display: block;
+    height: 35px;
+    padding: 0 0;
+}
+
+.board .container {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.container {
+    z-index: 100;
+    float: left;
+    display: inline-block;
+}
+
+.slot {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #4d0000;
+    box-shadow: 0px 0px 8px #4d0000;
+}
+
+.hole {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: white;
+}
+
+.slot.player1 .hole {
+    background-color: red;
+    border-radius: 100%;
+    background-size: 60px 60px;
+    border: 1px solid gold;
+    box-shadow: 0 15px rgba(255, 255, 255, 0.25) inset;
+}
+
+.slot.player1.win .hole {
+    background-image: url('images/iron.png');
+    border-radius: 100%;
+    background-size: 60px 60px;
+    border: 1px solid gold;
+    box-shadow: 0 15px rgba(255, 255, 255, 0.25) inset;
+}
+
+.slot.player2.win .hole {
+    background-image: url('images/spider.png');
+    border-radius: 100%;
+    background-size: 60px 60px;
+    border: 1px solid rgb(128, 0, 0);
+    box-shadow: 0 15px rgba(255, 255, 255, 0.25) inset;
+}
+
+.slot.player2 .hole {
+    background-color: #ffc334;
+    border-radius: 100%;
+    background-size: 60px 60px;
+    border: 1px solid rgb(128, 0, 0);
+    box-shadow: 0 15px rgba(255, 255, 255, 0.25) inset;
+}
+
+#uno, #scoreUno {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5em;
+    color: maroon;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    text-shadow: 2px 2px #FF0000;
+    z-index: 9;
+}
+
+#dos, #scoreDos {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5em;
+    color: rgb(204, 204, 0);
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    text-shadow: 2px 2px #999900;
+    z-index: 9;
+}
+
+#scoreUno, #scoreDos {
+    top: 70%;
+    font-size: 10em;
+}
+
+#blur img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+}
+
+.iron {
+    background-image: url('images/iron.png');
+    height: 80px;
+    width: 80px;
+}
+
+.cap {
+    background-image: url('images/cap.png');
+    height: 80px;
+    width: 80px;
+}
+
+.spider {
+    background-image: url('images/spider.png');
+    height: 80px;
+    width: 80px;
+}
+
+.thor {
+    background-image: url('images/thor.png');
+    height: 80px;
+    width: 80px;
+}
+
+.thanos {
+    background-image: url('images/thor.png');
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: -9;
+  animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/avengerswall.jpg');
+}
+.slideshow li:nth-child(2) {
+  background-image:  url('images/ironwall.jpg');
+  animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+  background-image:  url('images/spiderwall.jpg');
+  animation-delay: 20s;
+}
+.slideshow li:nth-child(4) {
+  background-image:  url('images/capwall.jpg');
+  animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/thorwall.jpg');
+  animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* ========================
+NORMAL BOARD
+======================== */
+
+.white {
+    position: absolute;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+}
+
+.white span {
+    font-size: 1em;
+    font-weight: 800;
+}
+
+#oldWinner {
+    text-align: center;
+    margin: 15px auto;
+    color: black;
+    font-size: 2em;
+}
+
+#resetOld {
+    position: absolute;
+    font-size: 1.5em;
+    bottom: 8%;
+    left: 43%;
+    background-color:#74ad5a;
+    border:1px solid #3b6e22;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-weight:bold;
+    padding:6px 12px;
+    text-decoration:none;
+}
+
+.board {
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    z-index: 9999999;
+    background: blue;
+}
+
+#unoName {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    text-align: center;
+    color: white;
+    background-color: red;
+    height: 40px;
+    font-size: 1.5em;
+    transition: none;
+}
+
+#dosName {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    text-align: center;
+    color: white;
+    background-color: rgb(204, 204, 0);
+    height: 40px;
+    font-size: 1.5em;
+    transition: none;
+}
