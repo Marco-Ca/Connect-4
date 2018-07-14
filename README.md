@@ -2,6 +2,7 @@
 <br>
 <br><br>
 <br>
+
 ![](./gifs/connect4a.gif)
 <br>
 <br>
