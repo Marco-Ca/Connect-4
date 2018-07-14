@@ -1,12 +1,19 @@
 # Avenger's Connect 4 Game
-<br>
-<br><br>
-<br>
+
+
+### Description
+
+Avengers Connect 4 Game built using HTML, CSS, Javascript, jQuery.
+<br/>
+<br/>
+
 
 ![](./gifs/connect4a.gif)
-<br>
-<br>
+<br/>
+<br/>
+
 ![](./gifs/connect4b.gif)
-<br>
-<br>
+<br/>
+<br/>
+
 ![](./gifs/connect4c.gif)
